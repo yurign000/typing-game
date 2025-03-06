@@ -1,6 +1,16 @@
 #typing__area, #placeholder__area{
-    /* position: absolute; */
+    position: absolute;
     overflow: hidden;
     resize: none;
     outline: none;
+    z-index: 0;
+    background-color: transparent;
+    height: 50px;
+    width: 200px;
+}
+#typing__area{
+    z-index: 1;
+}
+#placeholder__area{
+    color: #999;
 }
