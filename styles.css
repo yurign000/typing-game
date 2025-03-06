@@ -1,0 +1,6 @@
+#typing__area, #placeholder__area{
+    /* position: absolute; */
+    overflow: hidden;
+    resize: none;
+    outline: none;
+}
