@@ -1,16 +1,39 @@
+*{
+    font-size: 20px;
+    padding: 0;
+
+    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
 #typing__area, #placeholder__area{
     position: absolute;
     overflow: hidden;
     resize: none;
-    outline: none;
+    outline: 2px solid;
+    outline-offset: 2px;
+    border: none;
     z-index: 0;
     background-color: transparent;
     height: 50px;
-    width: 200px;
+    width: 400px;
 }
 #typing__area{
-    z-index: 1;
+    z-index: -1;
 }
 #placeholder__area{
     color: #999;
+    z-index: -2;
+}
+#typo__area{
+    padding: 0;
+    font-size: 20px;
+}
+span{
+    z-index: 999;
+    padding-top: 0.5px;
+    background-color: #d33;
+    color: #fff;
+    outline: 1px solid #d33;
 }

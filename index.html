@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
-<body>
-    <textarea id="typing__area" oninput="sameTextAreaCheck()"></textarea>
+<body onload="document.querySelector('#typing__area').focus()">
+    <textarea id="typing__area" oninput="sameTextAreaCheck(event)"></textarea>
     <textarea id="placeholder__area">abacaxi laranja</textarea>
     <div id="typo__area"></div>
 
