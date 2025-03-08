@@ -2,10 +2,30 @@ var textarea = document.querySelector("#typing__area");
 var placeholder = document.querySelector("#placeholder__area");
 var typo_area = document.querySelector("#typo__area");
 
+var invalidKeysPressed = {
+    'Control': false,
+    'Tab': false,
+}
+document.addEventListener('keydown', ({key}) => invalidKeysPressed[key] = true)
+document.addEventListener('keyup', ({key}) => invalidKeysPressed[key] = false)
+
 function sameTextAreaCheck(key){
-    let isSame = placeholder.value.startsWith(textarea.value);
+    let isSame = placeholder.innerHTML.startsWith(textarea.value);
     
     return inputOnTypoArea(isSame, key); 
+}
+
+function blockSpecialKeys(event){
+    if(invalidKeysPressed['Tab'] && event.key == 'Enter'){
+        event.preventDefault()
+        window.location.reload()
+    }
+    else if(
+        invalidKeysPressed['Control'] && event.key == 'Backspace' ||
+        ['Enter','Tab','Alt'].includes(event.key)
+    ){
+        event.preventDefault()
+    }
 }
 
 async function generateRandomWords(quantity){
@@ -36,5 +56,4 @@ function inputOnTypoArea(isSame, key){
             
         typo_area.append(letter);
     }
-
 }

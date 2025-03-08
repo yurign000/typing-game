@@ -8,8 +8,9 @@
     <script src="script.js" defer></script>
 </head>
 <body onload="document.querySelector('#typing__area').focus()">
-    <textarea id="typing__area" oninput="sameTextAreaCheck(event)"></textarea>
-    <textarea id="placeholder__area">abacaxi laranja</textarea>
+
+    <textarea id="typing__area" oninput="sameTextAreaCheck(event)" onkeydown="blockSpecialKeys(event)"></textarea>
+    <div id="placeholder__area">abacaxi laranja</div>
     <div id="typo__area"></div>
 
 </body>
