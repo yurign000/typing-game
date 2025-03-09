@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +9,8 @@
 </head>
 <body onload="document.querySelector('#typing__area').focus()">
 
-    <textarea id="typing__area" oninput="sameTextAreaCheck(event)" onkeydown="blockSpecialKeys(event)"></textarea>
-    <div id="placeholder__area">abacaxi laranja</div>
+    <textarea id="typing__area" spellcheck="false" oninput="sameTextAreaCheck(event)" onkeydown="blockSpecialKeys(event)"></textarea>
+    <div id="placeholder__area"></div>
     <div id="typo__area"></div>
 
 </body>

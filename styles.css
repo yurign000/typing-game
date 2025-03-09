@@ -12,13 +12,20 @@
     position: absolute;
     overflow: hidden;
     resize: none;
-    outline: 2px solid;
-    outline-offset: 2px;
     border: none;
     z-index: 0;
     background-color: transparent;
     height: 50px;
     width: 400px;
+    outline: none;
+}
+#placeholder__area{
+    height: 70px;
+    outline: 2px solid;
+    outline-offset: 2px;
+}
+*::grammar-error{
+    display: none;
 }
 #typing__area{
     z-index: 1;

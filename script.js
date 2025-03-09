@@ -1,6 +1,11 @@
 var textarea = document.querySelector("#typing__area");
 var placeholder = document.querySelector("#placeholder__area");
 var typo_area = document.querySelector("#typo__area");
+var wordsGenerated = '';
+
+var duration = 5;
+var isTyping = false;
+var wordsQuantity = 10;
 
 var invalidKeysPressed = {
     'Control': false,
@@ -9,9 +14,19 @@ var invalidKeysPressed = {
 document.addEventListener('keydown', ({key}) => invalidKeysPressed[key] = true)
 document.addEventListener('keyup', ({key}) => invalidKeysPressed[key] = false)
 
+window.addEventListener('load', async () => {
+    wordsGenerated = (await generateRandomWords(wordsQuantity)).join().replace(/,/g, ' ');
+    placeholder.innerHTML = wordsGenerated;
+})
+
 function sameTextAreaCheck(key){
     let isSame = placeholder.innerHTML.startsWith(textarea.value);
-    
+
+    if(!isTyping){
+        isTyping = true;
+        startTimer();
+    }
+
     return inputOnTypoArea(isSame, key); 
 }
 
@@ -56,4 +71,12 @@ function inputOnTypoArea(isSame, key){
             
         typo_area.append(letter);
     }
+}
+
+function startTimer(){
+    let interval = setInterval(() => {
+        if(duration-- <= 1){ 
+            clearInterval(interval);
+        }
+    }, 1000);
 }
