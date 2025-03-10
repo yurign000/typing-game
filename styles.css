@@ -1,16 +1,19 @@
 *{
     font-size: 20px;
-    padding: 0;
     box-sizing: border-box;
+    padding: 0;
 
     font-family: 'Courier New', Courier, monospace;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
 }
-
+body, html{
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
 #typing__area, #placeholder__area, #typo__area{
     position: absolute;
-    overflow: hidden;
     resize: none;
     border: none;
     z-index: 0;
@@ -18,17 +21,32 @@
     height: 50px;
     width: 400px;
     outline: none;
+    overflow: hidden;
+    line-height: 25px;
+    margin: 20px;
 }
-#placeholder__area{
-    height: 70px;
+#typing__border{
+    position: absolute;
     outline: 2px solid;
+    height: 75px;
+    width: 400px;
     outline-offset: 2px;
+    margin: 20px;
 }
-*::grammar-error{
-    display: none;
+#placeholder__area{    
+    height: 75px;
+    outline: 2px solid red;
 }
 #typing__area{
     z-index: 1;
+}
+#top__hide__placeholder{
+    position: absolute;
+    width: 408px;
+    transform: translate(-4px);
+    height: 16px;
+    margin-left: 20px;
+    background-color: white;
 }
 #placeholder__area{
     color: #999;
@@ -39,6 +57,8 @@
     font-size: 20px;
     z-index: 2;
     pointer-events: none;
+    overflow: auto;
+    height: 75px;
 }
 span{
     background-color: #d33;
