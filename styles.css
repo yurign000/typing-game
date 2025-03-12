@@ -2,9 +2,61 @@
     font-size: 20px;
     box-sizing: border-box;
     padding: 0; margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: monospace;
     font-weight: 600;
+    padding: 0;
+    margin: 0;
 }
 body, html{
     height: 100%;
+    overflow: hidden;
+
+}
+#typing__area{
+    display: flex;
+    flex-flow: wrap;
+    border: solid 2px;
+    margin: 10px;
+    outline-offset: -3px;
+    width: 400px;
+    height: 100px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, transparent 70%,#ffffffcb 90%, #fff 100%);
+}
+.words{
+    position: relative;
+    z-index: -1;
+    /* outline: 1px solid; */
+    padding: 4px 2px;
+    padding-left: 5px;  
+    height: max-content;
+}
+.letters{
+    color: #aaa;
+}
+#letter0::before{
+    content: '';
+    border-left: 2px solid;
+    transform: translateX(-1px);
+    color: #222;
+    position: absolute;
+    height: 20px;
+    animation: infinite letter__cursor linear 0.6s;
+}
+@keyframes letter__cursor {
+    0%{
+        color: #222;
+    }
+    29%{
+        color: #222;
+    }
+    30%{
+        color: transparent;
+    }
+    70%{
+        color: transparent;
+    }
+    71%{
+        color: #000;
+    }
 }
