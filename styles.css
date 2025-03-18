@@ -27,14 +27,14 @@ body, html{
     position: relative;
     z-index: -1;
     /* outline: 1px solid; */
-    padding: 4px 2px;
-    padding-left: 5px;  
+    padding: 4px 0x;
+    /* padding-left: 5px;   */
     height: max-content;
 }
 .letters{
     color: #aaa;
 }
-#letter0::before{
+#cursor__position::before{
     content: '';
     border-left: 2px solid;
     transform: translateX(-1px);
