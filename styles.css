@@ -5,12 +5,11 @@
 
 @keyframes cursor_animation {
     0%{
-        transform: translateX(calc((var(--typing-font-size)*-1*0.4)));
+        transform: translateX(calc((var(--typing-font-size)*-1*0.5)));
     }
     100%{
         transform: translateX(-1px);
     }
-    
 }
 @keyframes letter__cursor {
     0%{
