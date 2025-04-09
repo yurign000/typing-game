@@ -9,26 +9,36 @@
 </head>
 <body>
     <main>
-        <div class="words__quantity">
-            <label>Words:</label>
-            <div class="radio__container">
-                <input type="radio" name="words__radio">
-                <span class="radio__design">10</span>
-            </div>
-            <div class="radio__container">
-                <input type="radio" name="words__radio">
-                <span class="radio__design">30</span>
-            </div>
-            <div class="radio__container">
-                <input type="radio" name="words__radio">
-                <span class="radio__design">50</span>
-            </div>
-            <div class="radio__container">
-                <input type="radio" name="words__radio">
-                <span class="radio__design">100</span>
-            </div>
-        </div>
-        <div id="typing__area"></div>
+        <section id="config">
+            <article id="words__quantity">
+                <div class="radio__container">
+                    <input type="radio" name="words__radio">
+                    <p class="radio__design">10</p>
+                </div>
+                <div class="radio__container">
+                    <input type="radio" name="words__radio" checked>
+                    <span class="radio__design">20</span>
+                </div>
+                <div class="radio__container">
+                    <input type="radio" name="words__radio">
+                    <span class="radio__design">40</span>
+                </div>
+                <div class="radio__container">
+                    <input type="radio" name="words__radio">
+                    <span class="radio__design">100</span>
+                </div>
+                <div class="radio__container">
+                    <input type="radio" name="words__radio">
+                    <span class="radio__design">250</span>
+                </div>
+            </article>
+            <article id="font__size">
+                <label>Font:</label>
+                <input type="number" value="20">
+            </article>
+        </section>
+
+        <section id="typing__area"></section>
     </main>
 </body>
 </html>

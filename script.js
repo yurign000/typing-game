@@ -21,6 +21,8 @@ function reset(event){
         event.preventDefault()
         window.location.reload()
     }
+    let word0 = getComputedStyle(document.querySelector("#word0"))
+    console.log(word0.lineHeight)
 }
 
 async function generateRandomWords(quantity){
@@ -120,15 +122,15 @@ function typeLetter(letter, letter_to_type){
     
         else if(letter != 'Backspace' && !have_typo){
             startTimer()
-            document.documentElement.style.setProperty('--cursor-animation','infinite letter__cursor linear 0.6s, cursor_animation 0.05s linear')
+            document.documentElement.style.setProperty('--cursor-animation','infinite letter__cursor linear 0.6s, cursor_animation 0.08s linear')
 
 
             if(letter == letter_to_type.innerHTML){
-                letter_to_type.style.color = '#000'    
+                letter_to_type.style.color = '#333'    
             }
 
             else{
-                letter_to_type.style.backgroundColor = '#f00'
+                letter_to_type.style.backgroundColor = '#0ff'
                 letter_to_type.style.color = '#fff' 
                 have_typo = true;
                 typo_count++;
